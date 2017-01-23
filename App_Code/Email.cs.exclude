@@ -1,0 +1,2593 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using System.Configuration;
+using System.Web.Configuration;
+using System.Net.Configuration;
+using System.Net.Mail;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+/// <summary>
+/// Summary description for Email
+/// </summary>
+public class Email
+{
+    public string strWebsite = "Medicalbillersandcoders.com";
+    public string strPageInfo = string.Empty;
+    public string strPageName = "Other";
+    public string stremailtype = string.Empty;
+    public string stremailtype1 = string.Empty;
+    public string stremailtypeBrian = string.Empty;
+
+   
+    
+    public string prerna_email = "prerna@meddatacarepro.com";
+    public string steve_email = "steve@meddatacarepro.com";
+    public string shown_email = "shawn@meddatacarepro.com";
+    public string shown_email_mbc = "shawn@medicalbillersandcoders.com";
+    public string brian_email = "brian.reese@meddatacarepro.com";
+    public string info_email= "info@medicalbillersandcoders.com"; 
+
+
+
+    /* For Test purpose Removed All Emnail  */
+  /*  public string prerna_email = "developer@meddatacarepro.com";
+    public string steve_email = "developer@meddatacarepro.com";
+    public string shown_email = "developer@meddatacarepro.com";
+    public string shown_email_mbc = "developer@meddatacarepro.com";
+    public string brian_email = "developer@meddatacarepro.com";
+    public string info_email = "developer@meddatacarepro.com";*/
+
+
+
+   
+
+
+
+    
+        
+
+    //set of requirements
+    string strSpecName = null;
+    string strPrefernce = null;
+    string strCityPref = null;
+    string strStatePref = null;
+    string strYearsofExp = null;
+    string strSerReq = null;
+    string strEarly = null;
+    string strComments = null;
+    string TranscriptionDiectator = string.Empty;
+    string TranscriptionQuestion = string.Empty;
+    string strName_req = null;
+    string strCon_req = null;
+    string strEmaild_req = null;
+    string strDesignation = null;
+    string strattachement = null;
+    string strBillingrange = null;
+
+    ///emr softwares
+    string Specilaityid = string.Empty;
+    string strName = string.Empty;
+    string stremail = string.Empty;
+    string strcontactNo = string.Empty;
+    string strNumPhycicians = string.Empty;
+    string strRequirement = string.Empty;
+    string strAdminlogin = string.Empty;
+    string strRequiredMedicalBilling = string.Empty;
+    string strQuestion = string.Empty;
+    //faq
+    string strfaq = string.Empty;
+
+    //Enroll 3
+    string strSoftwareName = null;
+
+    //registration
+    string strAddress = null;
+    string strZip = null;
+
+    //knowmore & registration
+    string strBillername = null;
+
+    public Email()
+    {
+
+    }
+
+    //set of requirements
+    public void Setvalues_Req(string specialityname, string Preference, string state, string citypreference, string yearsofexp, string services, string early, string comments, string name, string contactno, string Emailid, string designation)
+    {
+        this.strSpecName = specialityname;
+        this.strPrefernce = Preference;
+        this.strCityPref = citypreference;
+        this.strStatePref = state;
+        this.strYearsofExp = yearsofexp;
+        this.strSerReq = services;
+        this.strEarly = early;
+        this.strComments = comments;
+        this.strName_req = name;
+        this.strCon_req = contactno;
+        this.strEmaild_req = Emailid;
+        this.strDesignation = designation;
+    }
+
+    //set of requirements
+    public void Setvalues_Req(string specialityname, string Preference, string state, string citypreference, string yearsofexp, string services, string early, string comments, string name, string contactno, string Emailid, string designation, string attachedFilePath)
+    {
+        this.strSpecName = specialityname;
+        this.strPrefernce = Preference;
+        this.strCityPref = citypreference;
+        this.strStatePref = state;
+        this.strYearsofExp = yearsofexp;
+        this.strSerReq = services;
+        this.strEarly = early;
+        this.strComments = comments;
+        this.strName_req = name;
+        this.strCon_req = contactno;
+        this.strEmaild_req = Emailid;
+        this.strDesignation = designation;
+        this.strattachement = attachedFilePath;
+
+    }
+    public void Setvalues_Req(string specialityname, string Preference, string state, string citypreference, string yearsofexp, string services, string early, string comments, string name, string contactno, string Emailid, string designation, string attachedFilePath, string software)
+    {
+        this.strSpecName = specialityname;
+        this.strPrefernce = Preference;
+        this.strCityPref = citypreference;
+        this.strStatePref = state;
+        this.strYearsofExp = yearsofexp;
+        this.strSerReq = services;
+        this.strEarly = early;
+        this.strComments = comments;
+        this.strName_req = name;
+        this.strCon_req = contactno;
+        this.strEmaild_req = Emailid;
+        this.strDesignation = designation;
+        this.strattachement = attachedFilePath;
+        this.strSoftwareName = software;
+
+    }
+
+    public void Setvalues_forCampain(string specialityname, string Preference, string state, string citypreference, string yearsofexp, string services, string early, string comments, string name, string contactno, string Emailid, string designation, string billing_range)
+    {
+        this.strSpecName = specialityname;
+        this.strPrefernce = Preference;
+        this.strCityPref = citypreference;
+        this.strStatePref = state;
+        this.strYearsofExp = yearsofexp;
+        this.strSerReq = services;
+        this.strEarly = early;
+        this.strComments = comments;
+        this.strName_req = name;
+        this.strCon_req = contactno;
+        this.strEmaild_req = Emailid;
+        this.strDesignation = designation;
+        this.strBillingrange = billing_range;
+    }
+    //set of requirements
+
+    ///EMR Email
+    public void Setvalues_Req(string Specilaityid, string strName, string stremail, string strcontactNo, string strNumPhycicians, string strRequirement, string strAdminlogin, string strRequiredMedicalBilling, string strQuestion)
+    {
+        ///emr softwares
+        this.Specilaityid = Specilaityid;
+        this.strName = strName;
+        this.stremail = stremail;
+        this.strcontactNo = strcontactNo;
+        this.strNumPhycicians = strNumPhycicians;
+        this.strRequirement = strRequirement;
+        this.strAdminlogin = strAdminlogin;
+        this.strRequiredMedicalBilling = strRequiredMedicalBilling;
+        this.strQuestion = strQuestion;
+    }
+
+    public string SendEmail_SetEMR()
+    {
+        string HTML;
+        MailMessage msg = new MailMessage();
+        string strResult;
+
+
+        try
+        {
+            msg.From = new MailAddress(this.stremail, this.strName);
+            msg.To.Add(info_email);
+            //msg.CC.Add("sandeep@ibnsolution.com");
+            //msg.CC.Add("dawson@meddatacarepro.com");
+            //msg.CC.Add("info@meddatacarepro.com");
+            msg.CC.Add(steve_email);
+            //msg.CC.Add("praveenkumar@meddatacarepro.com");
+            msg.CC.Add(prerna_email);
+            //msg.CC.Add("ashwinsridharan@meddatacarepro.com");
+            //msg.CC.Add("anupama@meddatacarepro.com");
+            //msg.CC.Add("aman@meddatacarepro.com");
+            msg.Bcc.Add("developer@meddatacarepro.com");
+
+            msg.Priority = MailPriority.High;
+            HTML = "<!DOCTYPE HTML PUBLIC\"-//IETF//DTD HTML//EN\">";
+            HTML = "<html>";
+            HTML = HTML + "<head>";
+            HTML = HTML + "<title>Email::" + strWebsite + "</title>";
+            HTML = HTML + "</head>";
+            HTML = "<body bgcolor=\"FFFFFF\">";
+            HTML = HTML + "<p><font size =\"2\" face=\"Arial\"><strong>";
+            if (!string.IsNullOrEmpty(this.Specilaityid))
+            {
+                HTML = HTML + "Specialty:: " + this.Specilaityid + "</strong><br>";
+            }
+
+            if (!string.IsNullOrEmpty(this.strNumPhycicians))
+            {
+                HTML = HTML + "No of Physicians:: " + this.strNumPhycicians + "</strong><br>";
+            }
+            HTML = HTML + "Name:: " + this.strName + "</strong><br>";
+
+            if (!string.IsNullOrEmpty(this.strRequirement))
+            {
+                HTML = HTML + "Requirement:: " + this.strRequirement + "</strong><br>";
+            }
+
+
+            HTML = HTML + "Contact:: " + this.strcontactNo + "</strong><br>";
+            HTML = HTML + "Email:: " + this.stremail + " </strong><br>";
+
+            if (!string.IsNullOrEmpty(this.strAdminlogin))
+            {
+                HTML = HTML + "No of Administration Logins:: " + this.strAdminlogin + "</strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strRequiredMedicalBilling))
+            {
+                HTML = HTML + "Is Medical Billing required too:: " + this.strRequiredMedicalBilling + "</strong><br>";
+            }
+
+            if (!string.IsNullOrEmpty(this.strQuestion))
+            {
+                HTML = HTML + "How soon do you need the installation?<br/> Answer:: " + this.strQuestion + " </strong><br>";
+            }
+
+            if (!string.IsNullOrEmpty(this.strPageInfo))
+            {
+                HTML = HTML + "<hr />";
+                HTML = HTML + this.strPageInfo + "</strong><br>";
+            }
+
+            HTML = HTML + "</strong><br/>";
+            HTML = HTML + "<p>Thank You.<br/>Have A Nice Day!</p>" + "</body>";
+            HTML = HTML + "</html>";
+
+            msg.Subject = strWebsite;
+
+            msg.Body = HTML;
+            msg.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+
+            client.Host = "pop.meddatacarepro.com";
+            client.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+
+            client.Send(msg);//uncomment while uploading
+            //autoreply_EmailAlerts_fromallpage(stremail);
+            strResult = "success";
+        }
+        catch (Exception ex)
+        {
+            
+            //this.StoreExceptions(ex);
+            //ErrorLog.WriteErrorLog(ex.ToString());
+            strResult = "failure";
+
+        }
+        finally
+        {
+            msg.Dispose();
+
+        }
+
+        return strResult;
+    }
+    ///EMR Email
+    
+    //Transcription requirement
+    public void Setvalues_forCampain(string specialityname, string Preference, string state, string citypreference, string yearsofexp, string services, string early, string comments, string name, string contactno, string Emailid, string designation, string billing_range, string TranscriptionDiectator, string TranscriptionQuestion)
+    {
+        this.strSpecName = specialityname;
+        this.strPrefernce = Preference;
+        this.strCityPref = citypreference;
+        this.strStatePref = state;
+        this.strYearsofExp = yearsofexp;
+        this.strSerReq = services;
+        this.strEarly = early;
+        this.strComments = comments;
+        this.strName_req = name;
+        this.strCon_req = contactno;
+        this.strEmaild_req = Emailid;
+        this.strDesignation = designation;
+        this.strBillingrange = billing_range;
+        this.TranscriptionDiectator = TranscriptionDiectator;
+        this.TranscriptionQuestion = TranscriptionQuestion;
+    }
+    
+    //Transcription requirement
+    public string SendEmail_SetTranscription()
+    {
+        string HTML;
+        MailMessage msg = new MailMessage();
+        string strResult;
+
+
+        //sending Mail 
+        try
+        {
+            msg.From = new MailAddress(this.strEmaild_req, this.strName_req);
+            msg.To.Add(info_email);
+            //msg.CC.Add("sandeep@ibnsolution.com");
+            //msg.CC.Add("dawson@meddatacarepro.com");
+            //msg.CC.Add("info@meddatacarepro.com");
+            msg.CC.Add(steve_email);
+            //msg.CC.Add("praveenkumar@meddatacarepro.com");
+            msg.CC.Add(prerna_email);
+            //msg.CC.Add("ashwinsridharan@meddatacarepro.com");
+            //msg.CC.Add("anupama@meddatacarepro.com");
+            //msg.CC.Add("aman@meddatacarepro.com");
+            msg.Bcc.Add("developer@meddatacarepro.com");
+
+
+            if (File.Exists(this.strattachement))
+            {
+                msg.Attachments.Add(new Attachment(this.strattachement));
+                this.strPageName = "Enroll";
+            }
+            msg.Priority = MailPriority.High;
+            HTML = "<!DOCTYPE HTML PUBLIC\"-//IETF//DTD HTML//EN\">";
+            HTML = "<html>";
+            HTML = HTML + "<head>";
+            HTML = HTML + "<title>Email::" + strWebsite + "</title>";
+            HTML = HTML + "</head>";
+            HTML = "<body bgcolor=\"FFFFFF\">";
+            HTML = HTML + "<p><font size =\"2\" face=\"Arial\"><strong>";
+            if (!string.IsNullOrEmpty(this.strBillername))
+            {
+                HTML = HTML + "looking for biller:: " + this.strBillername + "</strong><br>";
+            }
+
+            if (!string.IsNullOrEmpty(this.strComments))
+            {
+                HTML = HTML + "Comments:: " + this.strComments + "</strong><br>";
+            }
+            HTML = HTML + "Name:: " + this.strName_req + "</strong><br>";
+
+            if (!string.IsNullOrEmpty(this.strDesignation))
+            {
+                HTML = HTML + "Designation:: " + this.strDesignation + "</strong><br>";
+            }
+
+
+            HTML = HTML + "Contact:: " + this.strCon_req + "</strong><br>";
+            HTML = HTML + "Email:: " + this.strEmaild_req + " </strong><br>";
+
+            if (!string.IsNullOrEmpty(this.strZip))
+            {
+                HTML = HTML + "Zip:: " + this.strZip + "</strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strAddress))
+            {
+                HTML = HTML + "Address:: " + this.strAddress + "</strong><br>";
+            }
+
+            if (!string.IsNullOrEmpty(this.strSpecName))
+            {
+                HTML = HTML + "Specialty :: " + this.strSpecName + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strPrefernce))
+            {
+                HTML = HTML + "Do You Prefer In-house Medical Biller:: " + this.strPrefernce + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strBillingrange))
+            {
+                HTML = HTML + "Average monthly billing:: " + this.strBillingrange + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strStatePref))
+            {
+                HTML = HTML + "State  :: " + this.strStatePref + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strCityPref))
+            {
+                HTML = HTML + "City :: " + this.strCityPref + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strYearsofExp) && this.strYearsofExp != "0")
+            {
+                HTML = HTML + "Years Of Experience:: " + this.strYearsofExp + "</strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strSerReq))
+            {
+                HTML = HTML + "Specific Services Requirement:: " + this.strSerReq + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strEarly))
+            {
+                HTML = HTML + "How Early Do You Need To Engage The Medical Biller:: " + this.strEarly + "</strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strSoftwareName))
+            {
+                HTML = HTML + "Software Used:: " + this.strSoftwareName + "</strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.TranscriptionDiectator))
+            {
+                HTML = HTML + "No: of Dictators :: " + this.TranscriptionDiectator + "</strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.TranscriptionQuestion))
+            {
+                HTML = HTML + "How soon are you looking for the service? :: " + this.TranscriptionQuestion + "</strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strPageInfo))
+            {
+                HTML = HTML + "<hr />";
+                HTML = HTML + this.strPageInfo + "</strong><br>";
+            }
+
+            HTML = HTML + "</strong><br/>";
+            HTML = HTML + "<p>Thank You.<br/>Have A Nice Day!</p>" + "</body>";
+            HTML = HTML + "</html>";
+
+            msg.Subject = strWebsite;
+
+            msg.Body = HTML;
+            msg.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+
+            client.Host = "pop.meddatacarepro.com";
+
+            client.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+
+
+            client.Send(msg);//uncomment while uploading
+            //autoreply_EmailAlerts_fromallpage(strEmaild_req);
+            strResult = "success";
+        }
+        catch (Exception ex)
+        {
+            ErrorLog.WriteErrorLog(ex.ToString());
+            //this.StoreExceptions(ex);
+
+            strResult = "failure";
+
+        }
+        finally
+        {
+            msg.Dispose();
+
+        }
+
+        return strResult;
+    }
+
+    public string SendEmail_SetofReq()
+    {
+        //Test...
+        string HTML;
+        MailMessage msg = new MailMessage();
+        string strResult;
+
+
+        //sending Mail 
+        try
+        {
+            msg.From = new MailAddress(this.strEmaild_req, this.strName_req);
+
+            if (HttpContext.Current.Request.Url.Host.ToString() != "localhost")
+            {
+                //Server
+                msg.To.Add(info_email);
+                msg.CC.Add(steve_email);
+                msg.CC.Add(prerna_email);
+                msg.Bcc.Add("developer@meddatacarepro.com");
+            }
+            else
+            {
+                //Local
+                msg.To.Add("developer@meddatacarepro.com");
+            }
+            ////Commented by Old Code
+            //msg.CC.Add("dawson@meddatacarepro.com");
+            //msg.CC.Add("info@meddatacarepro.com");
+            //msg.CC.Add("praveenkumar@meddatacarepro.com");
+            //msg.CC.Add("ashwinsridharan@meddatacarepro.com");
+            //msg.CC.Add("anupama@meddatacarepro.com");
+            //msg.CC.Add("aman@meddatacarepro.com");
+
+            if (HttpContext.Current.Request.Url.Host.ToString() != "localhost")
+            {
+                if (!string.IsNullOrEmpty(this.stremailtype) && this.stremailtype.ToLower().Equals("recruiter"))
+                {
+                    msg.CC.Add("recruitment@medicalbillersandcoders.com"); // add this email id on live for this email id after cofirmation
+                    msg.CC.Add(shown_email);
+                }
+                else
+                {
+                    //msg.CC.Add("sandeep@ibnsolution.com");
+                }
+
+                if (!string.IsNullOrEmpty(this.stremailtype1) && this.stremailtype1.ToLower().Equals("shawn"))
+                {
+                    msg.CC.Add(shown_email);
+                }
+                if (!string.IsNullOrEmpty(this.stremailtypeBrian) && this.stremailtypeBrian.ToLower().Equals("brian"))
+                {
+                    msg.CC.Add(brian_email);
+                    msg.CC.Add(shown_email_mbc);
+                }
+            }
+            if (File.Exists(this.strattachement))
+            {
+                msg.Attachments.Add(new Attachment(this.strattachement));
+            }
+
+            msg.Priority = MailPriority.High;
+            HTML = "<!DOCTYPE HTML PUBLIC\"-//IETF//DTD HTML//EN\">";
+            HTML = "<html>";
+            HTML = HTML + "<head>";
+            HTML = HTML + "<title>Email::" + strWebsite + "</title>";
+            HTML = HTML + "</head>";
+            HTML = "<body bgcolor=\"FFFFFF\">";
+            HTML = HTML + "<p><font size =\"2\" face=\"Arial\"><strong>";
+            if (!string.IsNullOrEmpty(this.strBillername))
+            {
+                HTML = HTML + "looking for biller:: " + this.strBillername + "</strong><br>";
+            }
+
+            if (!string.IsNullOrEmpty(this.strComments))
+            {
+                HTML = HTML + "Comments:: " + this.strComments + "</strong><br>";
+            }
+            HTML = HTML + "Name:: " + this.strName_req + "</strong><br>";
+
+            if (!string.IsNullOrEmpty(this.strDesignation))
+            {
+                HTML = HTML + "Designation:: " + this.strDesignation + "</strong><br>";
+            }
+
+            HTML = HTML + "Contact:: " + this.strCon_req + "</strong><br>";
+            HTML = HTML + "Email:: " + this.strEmaild_req + " </strong><br>";
+
+            if (!string.IsNullOrEmpty(this.strZip))
+            {
+                HTML = HTML + "Zip:: " + this.strZip + "</strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strAddress))
+            {
+                HTML = HTML + "Address:: " + this.strAddress + "</strong><br>";
+            }
+
+            if (!string.IsNullOrEmpty(this.strSpecName))
+            {
+                HTML = HTML + "Specialty :: " + this.strSpecName + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strPrefernce))
+            {
+                HTML = HTML + "what are you looking for?:: " + this.strPrefernce + " </strong><br>";
+                // HTML = HTML + "Do You Prefer In-house Medical Biller :: " + this.strPrefernce + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strBillingrange))
+            {
+                HTML = HTML + "Average Monthly Billing :: " + this.strBillingrange + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strStatePref))
+            {
+                HTML = HTML + "State  :: " + this.strStatePref + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strCityPref))
+            {
+                HTML = HTML + "City :: " + this.strCityPref + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strYearsofExp) && this.strYearsofExp != "0")
+            {
+                HTML = HTML + "Years Of Experience:: " + this.strYearsofExp + "</strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strSerReq))
+            {
+                HTML = HTML + "Specific Services Requirement:: " + this.strSerReq + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strEarly))
+            {
+                HTML = HTML + "How Early Do You Need To Engage The Medical Biller:: " + this.strEarly + "</strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strSoftwareName))
+            {
+                HTML = HTML + "Software Used:: " + this.strSoftwareName + "</strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strPageInfo))
+            {
+                HTML = HTML + "<hr />";
+                HTML = HTML + this.strPageInfo + "</strong><br>";
+            }
+
+            HTML = HTML + "</strong><br>";
+            HTML = HTML + "<p>Thank You.<br/>Have A Nice Day!</p>" + "</body>";
+            HTML = HTML + "</html>";
+
+
+            msg.Subject = strWebsite;
+            msg.Body = HTML;
+            msg.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+
+            client.Host = "pop.meddatacarepro.com";
+
+            client.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+
+
+            client.Send(msg);//uncomment while uploading
+            if (this.strPageName.Equals("Enroll"))
+            {
+                autoreply_EmailAlerts_fromallpage(strEmaild_req);
+            }
+            strResult = "success";
+        }
+        catch (Exception ex)
+        {
+            //ErrorLog.WriteErrorLog(ex.ToString());
+            //this.StoreExceptions(ex);
+
+            strResult = "failure";
+
+        }
+        finally
+        {
+            msg.Dispose();
+
+        }
+
+        return strResult;
+    }
+
+    public string SendEmail_SetofReq1()
+    {
+        string HTML;
+        MailMessage msg = new MailMessage();
+        string strResult;
+
+
+        //sending Mail 
+        try
+        {
+            msg.From = new MailAddress(this.strEmaild_req, this.strName_req);
+            if (HttpContext.Current.Request.Url.Host.ToString() != "localhost")
+            {
+                //Server
+                msg.To.Add(info_email);
+                //msg.CC.Add("sandeep@ibnsolution.com");
+                //msg.CC.Add("info@meddatacarepro.com");
+                msg.CC.Add(steve_email);
+                //msg.CC.Add("praveenkumar@meddatacarepro.com");
+                msg.CC.Add(prerna_email);
+                //msg.CC.Add("dawson@meddatacarepro.com");
+                //msg.CC.Add("ashwinsridharan@meddatacarepro.com");
+                //msg.CC.Add("anupama@meddatacarepro.com");
+                //msg.CC.Add("aman@meddatacarepro.com");
+                msg.Bcc.Add("developer@meddatacarepro.com");
+                //msg.To.Add("mahesh@meddatacarepro.com");
+            }
+            else
+            {
+                //Local
+                msg.To.Add("developer@meddatacarepro.com");
+            }
+            if (File.Exists(this.strattachement))
+            {
+                msg.Attachments.Add(new Attachment(this.strattachement));
+                this.strPageName = "Enroll";
+            }
+            msg.Priority = MailPriority.High;
+            HTML = "<!DOCTYPE HTML PUBLIC\"-//IETF//DTD HTML//EN\">";
+            HTML = "<html>";
+            HTML = HTML + "<head>";
+            HTML = HTML + "<title>Email::" + strWebsite + "</title>";
+            HTML = HTML + "</head>";
+            HTML = "<body bgcolor=\"FFFFFF\">";
+            HTML = HTML + "<p><font size =\"2\" face=\"Arial\"><strong>";
+            if (!string.IsNullOrEmpty(this.strBillername))
+            {
+                HTML = HTML + "looking for biller:: " + this.strBillername + "</strong><br>";
+            }
+
+            if (!string.IsNullOrEmpty(this.strComments))
+            {
+                HTML = HTML + "Comments:: " + this.strComments + "</strong><br>";
+            }
+            HTML = HTML + "Name:: " + this.strName_req + "</strong><br>";
+
+            if (!string.IsNullOrEmpty(this.strDesignation))
+            {
+                HTML = HTML + "Designation:: " + this.strDesignation + "</strong><br>";
+            }
+
+
+            HTML = HTML + "Contact:: " + this.strCon_req + "</strong><br>";
+            HTML = HTML + "Email:: " + this.strEmaild_req + " </strong><br>";
+
+            if (!string.IsNullOrEmpty(this.strZip))
+            {
+                HTML = HTML + "Zip:: " + this.strZip + "</strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strAddress))
+            {
+                HTML = HTML + "Address:: " + this.strAddress + "</strong><br>";
+            }
+
+            if (!string.IsNullOrEmpty(this.strSpecName))
+            {
+                HTML = HTML + "Specialty :: " + this.strSpecName + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strPrefernce))
+            {
+                HTML = HTML + "Do You Prefer In-house Medical Biller:: " + this.strPrefernce + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strBillingrange))
+            {
+                HTML = HTML + this.strBillingrange + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strStatePref))
+            {
+                HTML = HTML + "State  :: " + this.strStatePref + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strCityPref))
+            {
+                HTML = HTML + "City :: " + this.strCityPref + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strYearsofExp) && this.strYearsofExp != "0")
+            {
+                HTML = HTML + "Years Of Experience:: " + this.strYearsofExp + "</strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strSerReq))
+            {
+                HTML = HTML + "Specific Services Requirement:: " + this.strSerReq + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strEarly))
+            {
+                HTML = HTML + "How Early Do You Need To Engage The Medical Biller:: " + this.strEarly + "</strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strSoftwareName))
+            {
+                HTML = HTML + "Software Used:: " + this.strSoftwareName + "</strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strPageInfo))
+            {
+                HTML = HTML + "<hr />";
+                HTML = HTML + this.strPageInfo + "</strong><br>";
+            }
+            HTML = HTML + "</strong><br/>";
+            HTML = HTML + "<p>Thank You.<br/>Have A Nice Day!</p>" + "</body>";
+            HTML = HTML + "</html>";
+
+            msg.Subject = strWebsite;
+
+            msg.Body = HTML;
+            msg.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+
+            client.Host = "pop.meddatacarepro.com";
+            client.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+
+            client.Send(msg);//uncomment while uploading
+
+
+            strResult = "success";
+        }
+        catch (Exception ex)
+        {
+            ErrorLog.WriteErrorLog(ex.ToString());
+            //this.StoreExceptions(ex);
+
+            strResult = "failure";
+
+        }
+        finally
+        {
+            msg.Dispose();
+
+        }
+
+        return strResult;
+    }
+
+    //enroll3 aspx
+    public void Setvalues_Enroll3(string specialityname, string Preference, string state, string citypreference, string yearsofexp, string services, string early, string comments, string name, string contactno, string Emailid, string designation, string softwarename)
+    {
+        Setvalues_Req(specialityname, Preference, state, citypreference, yearsofexp, services, early, comments, name, contactno, Emailid, designation);
+        this.strSoftwareName = softwarename;
+    }
+    
+    //registration
+    public void Setvalues_Reg(string specialityname, string Preference, string state, string citypreference, string yearsofexp, string services, string early, string comments, string name, string contactno, string Emailid, string designation, string Address, string zip)
+    {
+        Setvalues_Req(specialityname, Preference, state, citypreference, yearsofexp, services, early, comments, name, contactno, Emailid, designation);
+        this.strZip = zip;
+        this.strAddress = Address;
+    }
+    
+    /// <summary>
+    /// for mail of subscription
+    /// </summary>
+    /// <param name="emailId"></param>
+    /// <returns></returns>
+    public string SendMail_EmailAlerts_fromReportPage(string emailId)
+    {
+        string HTML;
+        MailMessage msg = new MailMessage();
+        string strResult;
+
+
+        //sending Mail 
+        try
+        {
+            if (HttpContext.Current.Request.Url.Host.ToString() != "localhost")
+            {
+                //Server
+                msg.From = new MailAddress(emailId, "");
+                msg.To.Add(info_email);
+                //msg.CC.Add("sandeep@ibnsolution.com");
+                //msg.CC.Add("dawson@meddatacarepro.com");
+                //msg.CC.Add("info@meddatacarepro.com");
+                msg.CC.Add(steve_email);
+                //msg.CC.Add("praveenkumar@meddatacarepro.com");
+                msg.CC.Add(prerna_email);
+                //msg.CC.Add("ashwinsridharan@meddatacarepro.com");
+                //msg.CC.Add("anupama@meddatacarepro.com");
+                //msg.CC.Add("aman@meddatacarepro.com");
+                msg.Bcc.Add("developer@meddatacarepro.com");
+            }
+            else
+            {
+                //Local
+                msg.To.Add("developer@meddatacarepro.com");
+            }
+            msg.Priority = MailPriority.Normal;
+            HTML = "<!DOCTYPE HTML PUBLIC\"-//IETF//DTD HTML//EN\">";
+            HTML = HTML + "<html>";
+            HTML = HTML + "<head>";
+            HTML = HTML + "<title>Email</title>";
+            HTML = HTML + "</head>";
+            HTML = HTML + "<body bgcolor=\"FFFFFF\">";
+            HTML = HTML + "<p><font size =\"2\" face=\"Arial\"><strong>";
+
+            HTML = HTML + "<p>The follwing Email ID is Subscribed for news letters on Medicalbillersandcoders.com <br/> " + emailId + " </p>" + "</body>";
+            HTML = HTML + "</html>";
+
+            msg.Subject = " :: MBC Newsletter New Subscriber";
+            msg.Body = HTML;
+            msg.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+
+            client.Host = "pop.meddatacarepro.com";
+
+            client.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+
+
+            client.Send(msg);//uncomment while uploading
+
+            strResult = "success";
+            //autoreply_EmailAlerts_fromReportPage(emailId);
+        }
+        catch (Exception ex)
+        {
+            ErrorLog.WriteErrorLog(ex.ToString());
+            ex.ToString();
+
+            strResult = "failure";
+
+        }
+        finally
+        {
+            msg.Dispose();
+
+        }
+
+        return strResult;
+    }
+    public string SendMail_EmailAlerts_icd10subscription(string emailId)
+    {
+        string HTML;
+        MailMessage msg = new MailMessage();
+        string strResult;
+
+
+        //sending Mail 
+        try
+        { 
+            msg.From = new MailAddress(emailId, emailId.Substring(0,emailId.IndexOf("@")));
+            if (HttpContext.Current.Request.Url.Host.ToString() != "localhost")
+            {
+                //Server
+               
+                msg.To.Add(info_email);
+                //msg.CC.Add("sandeep@ibnsolution.com");
+                //msg.CC.Add("dawson@meddatacarepro.com");
+                //msg.CC.Add("info@meddatacarepro.com");
+                msg.CC.Add(steve_email);
+                //   //msg.CC.Add("praveenkumar@meddatacarepro.com");
+                msg.CC.Add(prerna_email);
+                //msg.CC.Add("ashwinsridharan@meddatacarepro.com");
+                //msg.CC.Add("anupama@meddatacarepro.com");
+                //msg.CC.Add("aman@meddatacarepro.com");
+                msg.Bcc.Add("developer@meddatacarepro.com");
+            }
+            else
+            {
+                //Local
+                msg.To.Add("developer@meddatacarepro.com");
+            }
+            msg.Priority = MailPriority.Normal;
+            HTML = "<!DOCTYPE HTML PUBLIC\"-//IETF//DTD HTML//EN\">";
+            HTML = HTML + "<html>";
+            HTML = HTML + "<head>";
+            HTML = HTML + "<title>Email</title>";
+            HTML = HTML + "</head>";
+            HTML = HTML + "<body bgcolor=\"FFFFFF\">";
+            HTML = HTML + "<p><font size =\"2\" face=\"Arial\"><strong>";
+
+            //HTML = HTML + "<p>The follwing Email ID is Subscribed for ICD-10 Latest News and Training on Medicalbillersandcoders.com <br/> " + emailId + " </p>" + "</body>";
+            //HTML = HTML + "</html>";
+
+            //msg.Subject = " :: MBC ICD-10 Latest News and Training New Subscriber";
+            //msg.Body = HTML;
+
+            HTML = HTML + "<p>The follwing Email ID is Subscribed for ICD-10 Training on Medicalbillersandcoders.com <br/> " + emailId + " </p>" + "</body>";
+            HTML = HTML + "</html>";
+
+            msg.Subject = " :: MBC ICD-10 Training New Subscriber";
+            msg.Body = HTML;
+            msg.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+
+            client.Host = "pop.meddatacarepro.com";
+
+            client.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+
+
+            client.Send(msg);//uncomment while uploading
+
+            strResult = "success";
+            //autoreply_EmailAlerts_fromReportPage(emailId);
+        }
+        catch (Exception ex)
+        {
+            ErrorLog.WriteErrorLog(ex.ToString());
+            ex.ToString();
+
+            strResult = "failure";
+
+        }
+        finally
+        {
+            msg.Dispose();
+
+        }
+
+        return strResult;
+    }
+
+    public string SendMail_EmailAlerts_icd10subscription(string EmailID, string Name, string ContactNo)
+    {
+        string HTML;
+        MailMessage msg = new MailMessage();
+        string strResult;
+
+
+        //sending Mail 
+        try
+        {
+
+            msg.From = new MailAddress(EmailID, "");
+
+            if (HttpContext.Current.Request.Url.Host.ToString() != "localhost")
+            {
+                //Server
+                msg.To.Add(info_email);
+                //msg.CC.Add("sandeep@ibnsolution.com");
+                //msg.CC.Add("dawson@meddatacarepro.com");
+                //msg.CC.Add("info@meddatacarepro.com");
+                msg.CC.Add(steve_email);
+                //   //msg.CC.Add("praveenkumar@meddatacarepro.com");
+                msg.CC.Add(prerna_email);
+                //msg.CC.Add("ashwinsridharan@meddatacarepro.com");
+                //msg.CC.Add("anupama@meddatacarepro.com");
+                //msg.CC.Add("aman@meddatacarepro.com");
+                msg.Bcc.Add("developer@meddatacarepro.com");
+            }
+            else
+            {
+                //Local
+                msg.To.Add("developer@meddatacarepro.com");
+            }
+            msg.Priority = MailPriority.Normal;
+            HTML = "<!DOCTYPE HTML PUBLIC\"-//IETF//DTD HTML//EN\">";
+            HTML = HTML + "<html>";
+            HTML = HTML + "<head>";
+            HTML = HTML + "<title>Email</title>";
+            HTML = HTML + "</head>";
+            HTML = HTML + "<body bgcolor=\"FFFFFF\">";
+            HTML = HTML + "<p><font size =\"2\" face=\"Arial\"><strong>";
+
+            //HTML = HTML + "<p>The follwing Email ID is Subscribed for ICD-10 Latest News and Training on Medicalbillersandcoders.com <br/> " + emailId + " </p>" + "</body>";
+            //HTML = HTML + "</html>";
+
+            //msg.Subject = " :: MBC ICD-10 Latest News and Training New Subscriber";
+            //msg.Body = HTML;
+
+            HTML = HTML + "<p>The follwing Email ID is Subscribed for ICD-10 Training on Medicalbillersandcoders.com <br/> " + EmailID + "<br />Name : " + Name + "<br />Contact No. : " + ContactNo + " </p>" + "</body>";
+            HTML = HTML + "</html>";
+
+            msg.Subject = " :: MBC ICD-10 Training New Subscriber";
+            msg.Body = HTML;
+            msg.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+
+            client.Host = "pop.meddatacarepro.com";
+
+            client.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+
+
+            client.Send(msg);//uncomment while uploading
+
+            strResult = "success";
+            //autoreply_EmailAlerts_fromReportPage(EmailID);
+        }
+        catch (Exception ex)
+        {
+            ErrorLog.WriteErrorLog(ex.ToString());
+            ex.ToString();
+
+            strResult = "failure";
+
+        }
+        finally
+        {
+            msg.Dispose();
+
+        }
+
+        return strResult;
+    }
+    public string SendMail_EmailAlerts_icd10Comments(string emailId, string comments)
+    {
+        string HTML;
+        MailMessage msg = new MailMessage();
+        string strResult;
+
+
+        //sending Mail 
+        try
+        {
+
+            msg.From = new MailAddress(emailId, "");
+            if (HttpContext.Current.Request.Url.Host.ToString() != "localhost")
+            {
+                //Server
+                msg.To.Add(info_email);
+                //msg.CC.Add("sandeep@ibnsolution.com");
+                //msg.CC.Add("dawson@meddatacarepro.com");
+                //msg.CC.Add("info@meddatacarepro.com");
+                msg.CC.Add(steve_email);
+                //       //msg.CC.Add("praveenkumar@meddatacarepro.com");
+                msg.CC.Add(prerna_email);
+                //msg.CC.Add("ashwinsridharan@meddatacarepro.com");
+                //msg.CC.Add("anupama@meddatacarepro.com");
+                //msg.CC.Add("aman@meddatacarepro.com");
+                msg.Bcc.Add("developer@meddatacarepro.com");
+            }
+            else
+            {
+                //Local
+                msg.To.Add("developer@meddatacarepro.com");
+            }
+            msg.Priority = MailPriority.Normal;
+            HTML = "<!DOCTYPE HTML PUBLIC\"-//IETF//DTD HTML//EN\">";
+            HTML = HTML + "<html>";
+            HTML = HTML + "<head>";
+            HTML = HTML + "<title>Email</title>";
+            HTML = HTML + "</head>";
+            HTML = HTML + "<body bgcolor=\"FFFFFF\">";
+            HTML = HTML + "<p><font size =\"2\" face=\"Arial\"><strong>";
+
+            HTML = HTML + "<p>MBC ICD-10 Share Your Comment <br/> " + emailId + " </p>";
+            //HTML = HTML + "<p>The follwing Email ID is Subscribed for ICD-10 Latest News and Training on Medicalbillersandcoders.com <br/> " + emailId + " </p>";
+            HTML = HTML + "<p><br/>" + comments + "<p>" + "</body>";
+            HTML = HTML + "</html>";
+
+            msg.Subject = " :: MBC ICD-10 Share Your Comment";
+            msg.Body = HTML;
+            msg.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+
+            client.Host = "pop.meddatacarepro.com";
+
+            client.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+
+
+            client.Send(msg);//uncomment while uploading
+
+            strResult = "success";
+
+        }
+        catch (Exception ex)
+        {
+            ErrorLog.WriteErrorLog(ex.ToString());
+            ex.ToString();
+
+            strResult = "failure";
+
+        }
+        finally
+        {
+            msg.Dispose();
+
+        }
+
+        return strResult;
+    }
+    public string sendGusetArticles(string emailId, string strname, string articledoc)
+    {
+        string HTML;
+        MailMessage msg = new MailMessage();
+        string strResult;
+
+
+        //sending Mail 
+        try
+        {
+            msg.From = new MailAddress(emailId, "");
+            msg.To.Add(info_email);
+            //msg.CC.Add("sandeep@ibnsolution.com");
+            //msg.CC.Add("dawson@meddatacarepro.com");
+            //msg.CC.Add("info@meddatacarepro.com");
+            msg.CC.Add(steve_email);
+            //         //msg.CC.Add("praveenkumar@meddatacarepro.com");
+            msg.CC.Add(prerna_email);
+            //msg.CC.Add("ashwinsridharan@meddatacarepro.com");
+            ////msg.CC.Add("anupama@meddatacarepro.com");
+            //msg.CC.Add("aman@meddatacarepro.com");
+            msg.Bcc.Add("developer@meddatacarepro.com");
+
+            //msg.CC.Add(steve_email);
+
+
+            if (File.Exists(articledoc))
+            {
+                System.Net.Mail.Attachment inline = new System.Net.Mail.Attachment(articledoc);
+                inline.ContentDisposition.Inline = true;
+                msg.Attachments.Add(inline);
+            }
+            //msg.Attachments.Add(new Attachment(AttachmentFile.PostedFile.InputStream, AttachmentFile.FileName))
+            msg.Priority = MailPriority.High;
+            HTML = "<!DOCTYPE HTML PUBLIC\"-//IETF//DTD HTML//EN\">";
+            HTML = "<html>";
+            HTML = HTML + "<head>";
+            HTML = HTML + "<title>Email::" + strWebsite + "</title>";
+            HTML = HTML + "</head>";
+            HTML = "<body bgcolor=\"FFFFFF\">";
+            HTML = HTML + "<p><font size =\"2\" face=\"Arial\"><strong>";
+
+
+
+            HTML = HTML + "Name:: " + strname + "</strong><br>";
+
+            HTML = HTML + "</strong><br/>";
+            HTML = HTML + "<p>Thank You.<br/>Have A Nice Day!</p>" + "</body>";
+            HTML = HTML + "</html>";
+
+            msg.Subject = "Guset Article";
+
+            msg.Body = HTML;
+            msg.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+
+            client.Host = "pop.meddatacarepro.com";
+
+            client.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+
+
+            client.Send(msg);//uncomment while uploading
+
+            strResult = "success";
+        }
+        catch (Exception ex)
+        {
+            ErrorLog.WriteErrorLog(ex.ToString());
+            //this.StoreExceptions(ex);
+
+            strResult = "failure";
+
+        }
+        finally
+        {
+            msg.Dispose();
+
+        }
+
+        return strResult;
+    }
+    public string sendICDQueries(string emailId, string strqueries)
+    {
+        string HTML;
+        MailMessage msg = new MailMessage();
+        string strResult;
+
+
+        //sending Mail 
+        try
+        {
+            msg.From = new MailAddress(emailId, "");
+
+            if (HttpContext.Current.Request.Url.Host.ToString() != "localhost")
+            {
+                //Server
+                msg.To.Add(info_email);
+                //msg.CC.Add("sandeep@ibnsolution.com");
+                //msg.CC.Add("dawson@meddatacarepro.com");
+                //msg.CC.Add("info@meddatacarepro.com");
+                msg.CC.Add(steve_email);
+                //       //msg.CC.Add("praveenkumar@meddatacarepro.com");
+                msg.CC.Add(prerna_email);
+                //msg.CC.Add("ashwinsridharan@meddatacarepro.com");
+                ////msg.CC.Add("anupama@meddatacarepro.com");
+                //msg.CC.Add("aman@meddatacarepro.com");
+                msg.Bcc.Add("developer@meddatacarepro.com");
+            }
+            else
+            {
+                //Local
+                msg.To.Add("developer@meddatacarepro.com");
+            }
+
+            //msg.CC.Add(steve_email);
+            //msg.Attachments.Add(new Attachment(AttachmentFile.PostedFile.InputStream, AttachmentFile.FileName))
+            msg.Priority = MailPriority.High;
+            HTML = "<!DOCTYPE HTML PUBLIC\"-//IETF//DTD HTML//EN\">";
+            HTML = "<html>";
+            HTML = HTML + "<head>";
+            HTML = HTML + "<title>Email::" + strWebsite + "</title>";
+            HTML = HTML + "</head>";
+            HTML = "<body bgcolor=\"FFFFFF\">";
+            HTML = HTML + "<p><font size =\"2\" face=\"Arial\"><strong>";
+
+
+
+            HTML = HTML + "Queries:: " + strqueries + "</strong><br>";
+
+            HTML = HTML + "</strong><br/>";
+            HTML = HTML + "<p>Thank You.<br/>Have A Nice Day!</p>" + "</body>";
+            HTML = HTML + "</html>";
+
+            msg.Subject = "ICD-10 Queries";
+
+            msg.Body = HTML;
+            msg.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+
+            client.Host = "pop.meddatacarepro.com";
+
+            client.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+
+
+            client.Send(msg);//uncomment while uploading
+
+            strResult = "success";
+        }
+        catch (Exception ex)
+        {
+
+            //this.StoreExceptions(ex);
+            ErrorLog.WriteErrorLog(ex.ToString());
+            strResult = "failure";
+
+        }
+        finally
+        {
+            msg.Dispose();
+
+        }
+
+        return strResult;
+    }
+
+    public string autoreply_EmailAlerts_fromallpage(string emailId)
+    {
+        string HTML;
+        MailMessage msg = new MailMessage();
+        string strResult;
+
+        //sending Mail 
+        try
+        {
+            msg.From = new MailAddress("info@medicalbillersandcoders.com", "");
+            msg.To.Add(emailId);
+            msg.Priority = MailPriority.Normal;
+            HTML = "<!DOCTYPE HTML PUBLIC\"-//IETF//DTD HTML//EN\">";
+            HTML = HTML + "<html>";
+            HTML = HTML + "<head>";
+            HTML = HTML + "<title>Email</title>";
+            HTML = HTML + "</head>";
+            HTML = HTML + "<body bgcolor=\"FFFFFF\" style='font-family: Geneva, Arial, Helvetica, sans-serif; font-size: 12px;color: #000000; line-height: 14px;' >";
+            HTML = HTML + "<p><font size =\"2\" face=\"Arial\"><strong>";
+            if (this.strPageName.Equals("Enroll"))
+            {
+                HTML = HTML + "<p>Thank you for submitting your profile to Medical Billers and Coders! </p><br/><br/><p>We are glad to have you registered with us, we will personal call you in case of a job matching your profile.</p><br/><br/><p>In case you have forgotten to add your specialty or short/ long profile, you can mail it to us at: <a href='mailto:info@medicalbillersandcoders.com'>info@medicalbillersandcoder.com</a></p><br/><br/> ";
+                HTML = HTML + "<p>For further queries you can <a href='mailto:info@medicalbillersandcoders.com'>mail us</a> or call us on 888 357 3226</p>" + "</body>";
+                msg.Subject = "Thank you for submitting your profile to Medical Billers and Coders!";
+            }
+            else if (this.strPageName.Equals("Other"))
+            {
+                HTML = HTML + "<p>Thank you for filling out the form!</p><br/><br/><p>We are glad to have you registered with us, we will personal call you in case of a job matching your profile.</p><br/><br/><p>In case you have any other queries you can <a href='mailto:info@medicalbillersandcoders.com'>mail us</a> or call us on 888 357 3226</p>" + "</body>";
+                msg.Subject = "Thank you for filling out the form!";
+            }
+            else if (this.strPageName.ToLower().Equals("services"))
+            {
+
+                HTML = HTML + "<p>Hi " + this.strName_req + " ,</p>" +
+    "<p>Thank you for contacting Medicalbillersandcoders.com. Below is a detailed service scope which we offer in parts or as a whole cycle depending upon your requirement.</p>" +
+    "<p><strong>Credentialing:</strong><br /><br />We have a dedicated team of professionals who had specialized in the credentialing" +
+        "process. Give us the list of insurances you want to get credentialed our team of " +
+        "experts will take care of the rest. Pricing on the credentialing depends purely on the type of insurance you want to get enrolled with.</p>" +
+    "<p><strong>Billing Services:</strong><br /><br />Our Company will provide you the following services on the billing." +
+        "<ul><li>Patient Demographics Entry</li>" +
+            "<li>Coding</li>" +
+            "<li>Charge Entry</li>" +
+            "<li>Transmission</li>" +
+            "<li>Working on electronic rejections</li>" +
+            "<li>AR Follow up (Prioritizing the claims which are greater than 120+)</li>" +
+            "<li>Denial Management</li>" +
+            "<li>Cash Posting</li></ul></p>" +
+    "<p>Apart from the above, you will also receive our Demo log, Charge Entry log, Transmission and Rejection logs, Coding logs & AR templates from our team on a daily basis as " +
+        "a report for your reference. Your account will have a dedicated Manager who will be supported by a expert team of billers and coders.</p>" +
+    "<p>In order to draw out a pricing we will need your specialty and patient volume, butthe range is between 4 -6% of collection or another model for larger institutions.</p>" +
+    "<p>For more details and requirement on Software and consultancy services, I will becalling you soon.</p>" +
+    "<p>In case of any questions, please feel free to call.</p>" +
+    "<p>Thanks,<br /><strong style='font-size: 14px;'>Dawson Menezes</strong><br />Business Development Team<br />(888 357 3226) </p>" + "</body>";
+                msg.Subject = "Thank you for filling out the form!";
+            }
+            HTML = HTML + "</html>";
+
+            //msg.Subject = strWebsite + " :: Stay connencted :: ";
+            msg.Body = HTML;
+            msg.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+
+            client.Host = "pop.meddatacarepro.com";
+
+            client.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+
+
+            client.Send(msg);//uncomment while uploading
+
+            strResult = "success";
+        }
+        catch (Exception ex)
+        {
+
+            ex.ToString();
+            ErrorLog.WriteErrorLog(ex.ToString());
+            strResult = "failure";
+
+        }
+        finally
+        {
+            msg.Dispose();
+
+        }
+
+        return strResult;
+    }
+    public void setFAQ(string strquestion, string frmemail, string Strname, string strcontactno)
+    {
+
+        this.strName = Strname;
+        this.stremail = frmemail;
+        this.strcontactNo = strcontactno;
+        this.strfaq = strquestion;
+    }
+    public string SendEmail_SetFAQ()
+    {
+        string HTML;
+        MailMessage msg = new MailMessage();
+        string strResult;
+        
+        //sending Mail 
+        try
+        {
+            if (HttpContext.Current.Request.Url.Host.ToString() != "localhost")
+            {
+                //Server
+                msg.From = new MailAddress(this.stremail, this.strName);
+                msg.To.Add(info_email);
+                //msg.CC.Add("sandeep@ibnsolution.com");
+                msg.CC.Add("info@meddatacarepro.com");
+                //msg.CC.Add("dawson@meddatacarepro.com");
+                msg.CC.Add(steve_email);
+                //msg.CC.Add("praveenkumar@meddatacarepro.com");
+                msg.CC.Add(prerna_email);
+                //msg.CC.Add("ashwinsridharan@meddatacarepro.com");
+                //msg.CC.Add("anupama@meddatacarepro.com");
+                //msg.CC.Add("aman@meddatacarepro.com");
+                msg.Bcc.Add("developer@meddatacarepro.com");
+            }
+            else
+            {
+                //Local
+                msg.To.Add("developer@meddatacarepro.com");
+            }
+            msg.Priority = MailPriority.High;
+            HTML = "<!DOCTYPE HTML PUBLIC\"-//IETF//DTD HTML//EN\">";
+            HTML = "<html>";
+            HTML = HTML + "<head>";
+            HTML = HTML + "<title>Email::" + strWebsite + "</title>";
+            HTML = HTML + "</head>";
+            HTML = "<body bgcolor=\"FFFFFF\">";
+            HTML = HTML + "<p><font size =\"2\" face=\"Arial\">";
+
+
+            HTML = HTML + "<strong>Name:: " + this.strName + "</strong><br>";
+
+            if (!string.IsNullOrEmpty(this.strfaq))
+            {
+                HTML = HTML + "<strong>Question Asked:: " + this.strfaq + "</strong><br>";
+            }
+
+            HTML = HTML + "<strong>Contact:: " + this.strcontactNo + "</strong><br>";
+            HTML = HTML + "<strong>Email:: " + this.stremail + " </strong><br>";
+
+            HTML = HTML + "<p>Thank You.<br/>Have A Nice Day!</p>" + "</body>";
+            HTML = HTML + "</html>";
+
+            msg.Subject = strWebsite;
+
+            msg.Body = HTML;
+            msg.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+
+            client.Host = "pop.meddatacarepro.com";
+
+            client.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+
+
+            client.Send(msg);//uncomment while uploading
+            //autoreply_EmailAlerts_fromallpage(stremail);
+
+            strResult = "success";
+        }
+        catch (Exception ex)
+        {
+
+            //this.StoreExceptions(ex);
+            ErrorLog.WriteErrorLog(ex.ToString());
+            strResult = "failure";
+
+        }
+        finally
+        {
+            msg.Dispose();
+
+        }
+
+        return strResult;
+    }
+    public string sendscheduledmail(string title, string strreportpath)
+    {
+        string HTML;
+        MailMessage msg = new MailMessage();
+        string strResult;
+
+
+        //sending Mail 
+        try
+        {
+            msg.From = new MailAddress(info_email);
+            msg.To.Add(prerna_email);
+            //msg.To.Add("praveenkumar@meddatacarepro.com");
+
+            msg.CC.Add(steve_email);
+
+            msg.Bcc.Add("developer@meddatacarepro.com");
+
+            if (File.Exists(strreportpath))
+            {
+                System.Net.Mail.Attachment inline = new System.Net.Mail.Attachment(strreportpath);
+                inline.ContentDisposition.Inline = true;
+                msg.Attachments.Add(inline);
+            }
+            msg.Priority = MailPriority.High;
+            HTML = "<!DOCTYPE HTML PUBLIC\"-//IETF//DTD HTML//EN\">";
+            HTML = "<html>";
+            HTML = HTML + "<head>";
+            HTML = HTML + "<title>Email::" + strWebsite + "</title>";
+            HTML = HTML + "</head>";
+            HTML = "<body bgcolor=\"FFFFFF\">";
+            HTML = HTML + "<p><font size =\"2\" face=\"Arial\"><strong>";
+
+
+
+            HTML = HTML + "PFA " + title;
+
+            HTML = HTML + "</strong><br/>";
+            HTML = HTML + "</html>";
+
+            msg.Subject = title;
+            //msg.Subject = "Weekly Lead Report";
+
+            msg.Body = HTML;
+            msg.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+
+            client.Host = "pop.meddatacarepro.com";
+
+            client.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+
+
+            client.Send(msg);//uncomment while uploading
+
+            strResult = "success";
+        }
+        catch (Exception ex)
+        {
+
+            //this.StoreExceptions(ex);
+            ErrorLog.WriteErrorLog(ex.ToString());
+            strResult = "failure";
+
+        }
+        finally
+        {
+            msg.Dispose();
+
+        }
+
+        return strResult;
+    }
+
+    public string getresume(string strreportpath, string strurl, string strtile, Hashtable hashinfo)
+    {
+        string HTML;
+        MailMessage msg = new MailMessage();
+        string strResult;
+
+
+        //sending Mail 
+        try
+        {
+            if (hashinfo["Email"] != null)
+                msg.From = new MailAddress(hashinfo["Email"].ToString());
+            else
+                msg.From = new MailAddress(info_email);
+
+            msg.To.Add(info_email);
+            //msg.CC.Add("sandeep@ibnsolution.com");
+            //msg.CC.Add("info@meddatacarepro.com");
+            msg.CC.Add(steve_email);
+            //msg.CC.Add("dawson@meddatacarepro.com");
+            msg.CC.Add(prerna_email);
+            //msg.CC.Add("praveenkumar@meddatacarepro.com");
+            //msg.CC.Add("ashwinsridharan@meddatacarepro.com");
+            //msg.CC.Add("anupama@meddatacarepro.com");
+            //msg.CC.Add("aman@meddatacarepro.com");
+            msg.Bcc.Add("developer@meddatacarepro.com");
+            if (File.Exists(strreportpath))
+            {
+                System.Net.Mail.Attachment inline = new System.Net.Mail.Attachment(strreportpath);
+                inline.ContentDisposition.Inline = true;
+                msg.Attachments.Add(inline);
+            }
+            if (!string.IsNullOrEmpty(this.stremailtype) && this.stremailtype.ToLower().Equals("recruiter"))
+            {
+                msg.CC.Add("recruitment@medicalbillersandcoders.com"); // add this email id on live for this email id after cofirmation
+                //msg.CC.Add("mandar.madhav@gmail.com"); 
+
+            }
+            msg.Priority = MailPriority.High;
+            HTML = "<!DOCTYPE HTML PUBLIC\"-//IETF//DTD HTML//EN\">";
+            HTML = "<html>";
+            HTML = HTML + "<head>";
+            HTML = HTML + "<title>Email::" + strWebsite + "</title>";
+            HTML = HTML + "</head>";
+            HTML = "<body bgcolor=\"FFFFFF\">";
+            HTML = HTML + "<p><font size =\"2\" face=\"Arial\"><strong>";
+            HTML = HTML + "Applied for Following job Requirement";
+            HTML = HTML + "</strong><br/><br/>";
+
+            if (!string.IsNullOrEmpty(strtile))
+            {
+                HTML = HTML + "<strong>Title:: </strong>" + strtile + "<br/><br/>";
+            }
+            if (!string.IsNullOrEmpty(strurl))
+            {
+                HTML = HTML + "<strong>URL:: </strong>" + strurl + "<br/><br/>";
+            }
+            if (hashinfo["Name"] != null)
+            {
+                HTML = HTML + "<strong>Name :: </strong>" + hashinfo["Name"].ToString() + "<br/><br/>";
+            }
+            if (hashinfo["Email"] != null)
+            {
+                HTML = HTML + "<strong>Email ID :: </strong>" + hashinfo["Email"].ToString() + "<br/><br/>";
+            }
+            if (hashinfo["state"] != null)
+            {
+                HTML = HTML + "<strong>State :: </strong>" + hashinfo["state"].ToString() + "<br/><br/>";
+            }
+            if (hashinfo["city"] != null)
+            {
+                HTML = HTML + "<strong>City :: </strong>" + hashinfo["city"].ToString() + "<br/><br/>";
+            }
+
+
+            HTML = HTML + "</html>";
+
+            msg.Subject = strWebsite + ": Applied for job Requirement";
+
+            msg.Body = HTML;
+            msg.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+
+            client.Host = "pop.meddatacarepro.com";
+
+            client.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+
+
+            client.Send(msg);//uncomment while uploading
+
+            strResult = "success";
+        }
+        catch (Exception ex)
+        {
+
+            //this.StoreExceptions(ex);
+            ErrorLog.WriteErrorLog(ex.ToString());
+            ex.ToString();
+            strResult = "failure";
+
+        }
+        finally
+        {
+            msg.Dispose();
+
+        }
+
+        return strResult;
+    }
+
+
+    public string SendMail_EmailAlerts_toFriend(string emailId, string emailbody)
+    {
+        string HTML;
+        MailMessage msg = new MailMessage();
+        string strResult;
+
+
+        //sending Mail 
+        try
+        {
+
+            msg.From = new MailAddress("info@medicalbillersandcoders.com", "");
+            //msg.To.Add(info_email);
+            //msg.CC.Add("sandeep@ibnsolution.com");
+            //msg.CC.Add("info@meddatacarepro.com");
+            //msg.CC.Add(steve_email);
+            //msg.CC.Add(prerna_email);
+            //msg.CC.Add("ashwinsridharan@meddatacarepro.com");
+            ////msg.CC.Add("anupama@meddatacarepro.com");
+            //msg.CC.Add("aman@meddatacarepro.com");
+            //msg.Bcc.Add("mahesh@meddatacarepro.com");
+            msg.To.Add(emailId);
+            msg.Bcc.Add("developer@meddatacarepro.com");
+            msg.Bcc.Add(steve_email);
+            msg.Priority = MailPriority.Normal;
+            HTML = "<!DOCTYPE HTML PUBLIC\"-//IETF//DTD HTML//EN\">";
+            HTML = HTML + "<html>";
+            HTML = HTML + "<head>";
+            HTML = HTML + "<title>Email</title>";
+            HTML = HTML + "</head>";
+            HTML = HTML + "<body bgcolor=\"FFFFFF\">";
+            HTML = HTML + "<p><font size =\"2\" face=\"Arial\"><strong>";
+
+            HTML = HTML + "<p> " + emailbody + " </p>" + "</body>";
+            HTML = HTML + "</html>";
+
+            msg.Subject = " ::Share This Job";
+            msg.Body = HTML;
+            msg.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+
+            client.Host = "pop.meddatacarepro.com";
+
+            client.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+
+
+            client.Send(msg);//uncomment while uploading
+
+            strResult = "success";
+            //autoreply_EmailAlerts_fromReportPage(emailId);
+        }
+        catch (Exception ex)
+        {
+            ErrorLog.WriteErrorLog(ex.ToString());
+            ex.ToString();
+
+            strResult = "failure";
+
+        }
+        finally
+        {
+            msg.Dispose();
+
+        }
+
+        return strResult;
+    }
+    public string SendMail_EmailAlerts_jobboardsubscription(string emailId)
+    {
+        string HTML;
+        MailMessage msg = new MailMessage();
+        string strResult;
+
+
+        //sending Mail 
+        try
+        {
+
+            msg.From = new MailAddress(emailId, "");
+            //msg.To.Add(info_email);
+            //msg.CC.Add("sandeep@ibnsolution.com");
+            //msg.CC.Add("info@meddatacarepro.com");
+            //msg.CC.Add(steve_email);
+            //msg.CC.Add(prerna_email);
+            //msg.CC.Add("ashwinsridharan@meddatacarepro.com");
+            ////msg.CC.Add("anupama@meddatacarepro.com");
+            //msg.CC.Add("aman@meddatacarepro.com");
+            //msg.Bcc.Add("mahesh@meddatacarepro.com");
+            msg.To.Add(info_email);
+            msg.Bcc.Add("developer@meddatacarepro.com");
+            msg.CC.Add(steve_email);
+            msg.Priority = MailPriority.Normal;
+            HTML = "<!DOCTYPE HTML PUBLIC\"-//IETF//DTD HTML//EN\">";
+            HTML = HTML + "<html>";
+            HTML = HTML + "<head>";
+            HTML = HTML + "<title>Email</title>";
+            HTML = HTML + "</head>";
+            HTML = HTML + "<body bgcolor=\"FFFFFF\">";
+            HTML = HTML + "<p><font size =\"2\" face=\"Arial\"><strong>";
+
+            HTML = HTML + "<p>The follwing Email ID is Subscribed for Job Board Email Alert on Medicalbillersandcoders.com <br/> " + emailId + " </p>" + "</body>";
+            HTML = HTML + "</html>";
+
+            msg.Subject = " :: MBC Job Board Email Alert Subscriber";
+            msg.Body = HTML;
+            msg.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+
+            client.Host = "pop.meddatacarepro.com";
+
+            client.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+
+
+            client.Send(msg);//uncomment while uploading
+
+            strResult = "success";
+            //autoreply_EmailAlerts_fromReportPage(emailId);
+        }
+        catch (Exception ex)
+        {
+
+            ex.ToString();
+            ErrorLog.WriteErrorLog(ex.ToString());
+            strResult = "failure";
+
+        }
+        finally
+        {
+            msg.Dispose();
+
+        }
+
+        return strResult;
+    }
+    public string SendMail_DoctorsPosting(string emailId)
+    {
+        string HTML;
+        MailMessage msg = new MailMessage();
+        string strResult;
+
+
+        //sending Mail 
+        try
+        {
+
+            msg.From = new MailAddress("info@medicalbillersandcoders.com", "");
+            //msg.To.Add(info_email);
+            //msg.CC.Add("sandeep@ibnsolution.com");
+            //msg.CC.Add("info@meddatacarepro.com");
+            //msg.CC.Add(steve_email);
+            //msg.CC.Add(prerna_email);
+            //msg.CC.Add("ashwinsridharan@meddatacarepro.com");
+            ////msg.CC.Add("anupama@meddatacarepro.com");
+            //msg.CC.Add("aman@meddatacarepro.com");
+            //msg.Bcc.Add("mahesh@meddatacarepro.com");
+            msg.To.Add(emailId);
+            //msg.CC.Add("mahesh@meddatacarepro.com");
+            //msg.CC.Add(steve_email);
+            msg.Bcc.Add("developer@meddatacarepro.com");
+
+            msg.Priority = MailPriority.Normal;
+            HTML = "<!DOCTYPE HTML PUBLIC\"-//IETF//DTD HTML//EN\">";
+            HTML = HTML + "<html>";
+            HTML = HTML + "<head>";
+            HTML = HTML + "<title>Email</title>";
+            HTML = HTML + "</head>";
+            HTML = HTML + "<body bgcolor=\"FFFFFF\">";
+            HTML = HTML + "<p><font size =\"2\" face=\"Arial\"><strong>";
+
+            HTML = HTML + "<p> Thank you for Posting your Requirement on our Portal one our Experts will contact soon </p>" + "</body>";
+            HTML = HTML + "</html>";
+
+            msg.Subject = " ::New Job Posted on medicalbillersandcoders.com";
+            msg.Body = HTML;
+            msg.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+
+            client.Host = "pop.meddatacarepro.com";
+
+            client.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+
+
+            client.Send(msg);//uncomment while uploading
+
+            strResult = "success";
+            //autoreply_EmailAlerts_fromReportPage(emailId);
+        }
+        catch (Exception ex)
+        {
+
+            ex.ToString();
+            ErrorLog.WriteErrorLog(ex.ToString());
+            strResult = "failure";
+
+        }
+        finally
+        {
+            msg.Dispose();
+
+        }
+
+        return strResult;
+    }
+
+
+    public string SendMail_DoctorsPosting_toAppr(Hashtable emailinfo)
+    {
+        string HTML;
+        MailMessage msg = new MailMessage();
+        string strResult;
+
+
+        //sending Mail 
+        try
+        {
+
+            if (emailinfo["Toemail"] != null)
+                msg.From = new MailAddress(emailinfo["Toemail"].ToString(), "");
+            else
+                msg.From = new MailAddress("info@medicalbillersandcoders.com", "");
+
+
+            if (HttpContext.Current.Request.Url.Host.ToString() != "localhost")
+            {
+                msg.To.Add("recruitment@medicalbillersandcoders.com");
+                msg.CC.Add(steve_email);
+                msg.Bcc.Add("developer@meddatacarepro.com");
+            }
+            else
+            {
+                msg.To.Add("developer@meddatacarepro.com");
+            }
+            ////msg.CC.Add("praveenkumar@meddatacarepro.com");
+            //msg.CC.Add(prerna_email);
+            //msg.CC.Add("anupama@meddatacarepro.com");
+            //msg.CC.Add("sonika.s@mnmgroup.com");
+            //msg.CC.Add("aman@meddatacarepro.com");
+
+            //msg.Bcc.Add("mahesh@meddatacarepro.com");
+            msg.Priority = MailPriority.Normal;
+            HTML = "<!DOCTYPE HTML PUBLIC\"-//IETF//DTD HTML//EN\">";
+            HTML = HTML + "<html>";
+            HTML = HTML + "<head>";
+            HTML = HTML + "<title>Email</title>";
+            HTML = HTML + "</head>";
+            HTML = HTML + "<body bgcolor=\"FFFFFF\">";
+            HTML = HTML + "</strong><br/><br/>";
+            HTML = HTML + "<p>New job Requirement</p>";
+
+
+
+            if (emailinfo["Job Title"] != null)
+            {
+                HTML = HTML + "<strong>Job Title :: </strong>" + emailinfo["Job Title"].ToString() + "<br/><br/>";
+            }
+            if (emailinfo["Job Posting Date"] != null)
+            {
+                HTML = HTML + "<strong>Job Posting Date :: </strong>" + emailinfo["Job Posting Date"].ToString() + "<br/><br/>";
+            }
+            if (emailinfo["Job Posting Expiry Date"] != null)
+            {
+                HTML = HTML + "<strong>Job Posting Expiry Date :: </strong>" + emailinfo["Job Posting Expiry Date"].ToString() + "<br/><br/>";
+            }
+
+            if (emailinfo["Job Type"] != null)
+            {
+                HTML = HTML + "<strong>Job Type :: </strong>" + emailinfo["Job Type"].ToString() + "<br/><br/>";
+            }
+            if (emailinfo["Number Of Vaccancies"] != null)
+            {
+                HTML = HTML + "<strong>Number Of Vaccancies :: </strong>" + emailinfo["Number Of Vaccancies"].ToString() + "<br/><br/>";
+            }
+            if (emailinfo["Required Key Skills"] != null)
+            {
+                HTML = HTML + "<strong>Required Key Skills :: </strong>" + emailinfo["Required Key Skills"].ToString() + "<br/><br/>";
+            }
+            if (emailinfo["Job Posted by"] != null)
+            {
+                HTML = HTML + "<strong>Job Posted by :: </strong>" + emailinfo["Job Posted by"].ToString() + "<br/><br/>";
+            }
+            if (emailinfo["Email ID"] != null)
+            {
+                HTML = HTML + "<strong>Email ID :: </strong>" + emailinfo["Email ID"].ToString() + "<br/><br/>";
+            }
+            if (emailinfo["State"] != null)
+            {
+                HTML = HTML + "<strong>State :: </strong>" + emailinfo["State"].ToString() + "<br/><br/>";
+            }
+
+            if (emailinfo["City"] != null)
+            {
+                HTML = HTML + "<strong>City :: </strong>" + emailinfo["City"].ToString() + "<br/><br/>";
+            }
+            if (emailinfo["Contact No"] != null)
+            {
+                HTML = HTML + "<strong>Contact No :: </strong>" + emailinfo["Contact No"].ToString() + "<br/><br/>";
+            }
+
+
+            if (emailinfo["Specialty"] != null)
+            {
+                HTML = HTML + "<strong>Specialty :: </strong>" + emailinfo["Specialty"].ToString() + "<br/><br/>";
+            }
+            if (emailinfo["JD"] != null)
+            {
+                HTML = HTML + "<strong>Job Description :: </strong>" + emailinfo["JD"].ToString() + "<br/><br/>";
+            }
+            HTML = HTML + "</body>";
+            HTML = HTML + "</html>";
+
+            msg.Subject = "New job Requirement  On Medicalbillersandcoders.com ::";
+            msg.Body = HTML;
+            msg.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+
+            client.Host = "pop.meddatacarepro.com";
+
+            client.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+
+
+            client.Send(msg);//uncomment while uploading
+
+            strResult = "success";
+            //autoreply_EmailAlerts_fromReportPage(emailId);
+        }
+        catch (Exception ex)
+        {
+
+            ex.ToString();
+            ErrorLog.WriteErrorLog(ex.ToString());
+            strResult = "failure";
+
+        }
+        finally
+        {
+            msg.Dispose();
+
+        }
+
+        return strResult;
+    }
+    public string SendMail_ExpetResume(string emailId, string fileName, string contactNo, string Short_comment, string name)
+    {
+
+        string HTML;
+        MailMessage msg = new MailMessage();
+        string strResult;
+
+
+        //sending Mail 
+        try
+        {
+
+            msg.From = new MailAddress(emailId, "");
+            //msg.To.Add(info_email);
+            //msg.To.Add("jacob@medicalbillersandcoders.com");
+            //msg.CC.Add("sandeep@ibnsolution.com");
+            //msg.CC.Add("info@meddatacarepro.com");
+            //msg.CC.Add(steve_email);
+            //msg.CC.Add(prerna_email);
+            //msg.CC.Add("ashwinsridharan@meddatacarepro.com");
+            //msg.CC.Add("aman@meddatacarepro.com");
+            //msg.Bcc.Add("mahesh@meddatacarepro.com");
+            msg.To.Add("jacob@medicalbillersandcoders.com");
+            msg.Bcc.Add("developer@meddatacarepro.com");
+            if (File.Exists(fileName))
+            {
+                System.Net.Mail.Attachment inline = new System.Net.Mail.Attachment(fileName);
+                inline.ContentDisposition.Inline = true;
+                msg.Attachments.Add(inline);
+            }
+            //msg.CC.Add(steve_email);
+            msg.Priority = MailPriority.Normal;
+            HTML = "<!DOCTYPE HTML PUBLIC\"-//IETF//DTD HTML//EN\">";
+            HTML = HTML + "<html>";
+            HTML = HTML + "<head>";
+            HTML = HTML + "<title>Email</title>";
+            HTML = HTML + "</head>";
+            HTML = HTML + "<body bgcolor=\"FFFFFF\">";
+            HTML = HTML + "<p><font size =\"2\" face=\"Arial\"><strong>";
+            if (!string.IsNullOrEmpty(name))
+            {
+                HTML = HTML + "<strong>Name :: </strong>" + name + "<br/><br/>";
+            }
+            if (!string.IsNullOrEmpty(emailId))
+            {
+                HTML = HTML + "<strong>Email ID:: </strong>" + emailId + "<br/><br/>";
+            }
+            if (!string.IsNullOrEmpty(contactNo))
+            {
+                HTML = HTML + "<strong>Contact No :: </strong>" + contactNo + "<br/><br/>";
+            }
+            if (!string.IsNullOrEmpty(Short_comment))
+            {
+                HTML = HTML + "<strong>Short Comment:: </strong>" + Short_comment + "<br/><br/>";
+            }
+
+            HTML = HTML + "</body>";
+            HTML = HTML + "</html>";
+
+            msg.Subject = " ::Expert Resume received :: medicalbillersandcoders.com";
+            msg.Body = HTML;
+            msg.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+
+            client.Host = "pop.meddatacarepro.com";
+
+            client.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+
+
+            client.Send(msg);//uncomment while uploading
+
+            strResult = "success";
+            //autoreply_EmailAlerts_fromReportPage(emailId);
+        }
+        catch (Exception ex)
+        {
+
+            ex.ToString();
+            ErrorLog.WriteErrorLog(ex.ToString());
+            strResult = "failure";
+
+        }
+        finally
+        {
+            msg.Dispose();
+
+        }
+
+        return strResult;
+    }
+    public string LeadAssign_EmailAlerts(string emailId, string strLeadname)
+    {
+        string HTML;
+        MailMessage msg = new MailMessage();
+        string strResult;
+
+
+        //sending Mail 
+        try
+        {
+
+            msg.From = new MailAddress(this.strEmaild_req, this.strName_req);
+            if (HttpContext.Current.Request.Url.Host.ToString() != "localhost")
+            {
+                msg.To.Add(emailId);
+                msg.Bcc.Add("developer@meddatacarepro.com");
+                msg.Bcc.Add(steve_email);
+            }
+            else
+            {
+                msg.To.Add("developer@meddatacarepro.com");
+            }
+            //msg.Bcc.Add("praveenkumar@meddatacarepro.com");
+            msg.Priority = MailPriority.Normal;
+            HTML = "<!DOCTYPE HTML PUBLIC\"-//IETF//DTD HTML//EN\">";
+            HTML = HTML + "<html>";
+            HTML = HTML + "<head>";
+            HTML = HTML + "<title>Email</title>";
+            HTML = HTML + "</head>";
+            HTML = HTML + "<body bgcolor=\"FFFFFF\">";
+            HTML = HTML + "<p><font size =\"2\" face=\"Arial\"><strong>";
+
+            HTML = HTML + "<p>The following Lead assigned to you<br/> </p>";
+            if (!string.IsNullOrEmpty(this.strBillername))
+            {
+                HTML = HTML + "looking for biller:: " + this.strBillername + "</strong><br>";
+            }
+
+            if (!string.IsNullOrEmpty(this.strComments))
+            {
+                HTML = HTML + "Comments:: " + this.strComments + "</strong><br>";
+            }
+            HTML = HTML + "Name:: " + this.strName_req + "</strong><br>";
+
+            if (!string.IsNullOrEmpty(this.strDesignation))
+            {
+                HTML = HTML + "Designation:: " + this.strDesignation + "</strong><br>";
+            }
+
+
+            HTML = HTML + "Contact:: " + this.strCon_req + "</strong><br>";
+            HTML = HTML + "Email:: " + this.strEmaild_req + " </strong><br>";
+
+            if (!string.IsNullOrEmpty(this.strZip))
+            {
+                HTML = HTML + "Zip:: " + this.strZip + "</strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strAddress))
+            {
+                HTML = HTML + "Address:: " + this.strAddress + "</strong><br>";
+            }
+
+            if (!string.IsNullOrEmpty(this.strSpecName))
+            {
+                HTML = HTML + "Specialty :: " + this.strSpecName + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strPrefernce))
+            {
+                HTML = HTML + "what are you looking for?:: " + this.strPrefernce + " </strong><br>";
+                //                HTML = HTML + "Do You Prefer In-house Medical Biller:: " + this.strPrefernce + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strBillingrange))
+            {
+                HTML = HTML + this.strBillingrange + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strStatePref))
+            {
+                HTML = HTML + "State  :: " + this.strStatePref + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strCityPref))
+            {
+                HTML = HTML + "City :: " + this.strCityPref + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strYearsofExp) && this.strYearsofExp != "0")
+            {
+                HTML = HTML + "Years Of Experience:: " + this.strYearsofExp + "</strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strSerReq))
+            {
+                HTML = HTML + "Specific Services Requirement:: " + this.strSerReq + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strEarly))
+            {
+                HTML = HTML + "How Early Do You Need To Engage The Medical Biller:: " + this.strEarly + "</strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strSoftwareName))
+            {
+                HTML = HTML + "Software Used:: " + this.strSoftwareName + "</strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strPageInfo))
+            {
+                HTML = HTML + "<hr />";
+                HTML = HTML + this.strPageInfo + "</strong><br>";
+            }
+            HTML = HTML + "</body>";
+            HTML = HTML + "</html>";
+
+            msg.Subject = " :: MBC Leads Assigned";
+            msg.Body = HTML;
+            msg.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+
+            client.Host = "pop.meddatacarepro.com";
+
+            client.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+
+
+            client.Send(msg);//uncomment while uploading
+
+            strResult = "success";
+            //autoreply_EmailAlerts_fromReportPage(emailId);
+        }
+        catch (Exception ex)
+        {
+
+            ex.ToString();
+            ErrorLog.WriteErrorLog(ex.ToString());
+            strResult = "failure";
+
+        }
+        finally
+        {
+            msg.Dispose();
+
+        }
+
+        return strResult;
+    }
+    public string LeadAssign_EmailAlerts(string frm, string frmname, string emailId, string strLeadname)
+    {
+        string HTML;
+        MailMessage msg = new MailMessage();
+        string strResult;
+        //sending Mail 
+        try
+        {
+            //msg.From = new MailAddress("info@medicalbillersandcoders.com", "Admin");
+            msg.From = new MailAddress(frm, frmname);
+
+            msg.To.Add(emailId);
+            msg.Bcc.Add("developer@meddatacarepro.com");
+            msg.Bcc.Add(steve_email);
+            //msg.Bcc.Add("praveenkumar@meddatacarepro.com");
+            msg.Priority = MailPriority.Normal;
+            HTML = "<!DOCTYPE HTML PUBLIC\"-//IETF//DTD HTML//EN\">";
+            HTML = HTML + "<html>";
+            HTML = HTML + "<head>";
+            HTML = HTML + "<title>Email</title>";
+            HTML = HTML + "</head>";
+            HTML = HTML + "<body bgcolor=\"FFFFFF\">";
+            HTML = HTML + "<p><font size =\"2\" face=\"Arial\"><strong>";
+
+            HTML = HTML + "<p>The following Lead assigned to you<br/> </p>";
+            if (!string.IsNullOrEmpty(this.strBillername))
+            {
+                HTML = HTML + "looking for biller:: " + this.strBillername + "</strong><br>";
+            }
+
+            if (!string.IsNullOrEmpty(this.strComments))
+            {
+                HTML = HTML + "Comments:: " + this.strComments + "</strong><br>";
+            }
+            HTML = HTML + "Name:: " + frmname + "</strong><br>";
+
+            if (!string.IsNullOrEmpty(this.strDesignation))
+            {
+                HTML = HTML + "Designation:: " + this.strDesignation + "</strong><br>";
+            }
+
+
+            if (!string.IsNullOrEmpty(this.strCon_req))
+            {
+                HTML = HTML + "Contact:: " + this.strCon_req + "</strong><br>";
+            }
+            HTML = HTML + "Email:: " + frm + " </strong><br>";
+
+            if (!string.IsNullOrEmpty(this.strZip))
+            {
+                HTML = HTML + "Zip:: " + this.strZip + "</strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strAddress))
+            {
+                HTML = HTML + "Address:: " + this.strAddress + "</strong><br>";
+            }
+
+            if (!string.IsNullOrEmpty(this.strSpecName))
+            {
+                HTML = HTML + "Specialty :: " + this.strSpecName + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strPrefernce))
+            {
+                HTML = HTML + "what are you looking for?:: " + this.strPrefernce + " </strong><br>";
+                //                HTML = HTML + "Do You Prefer In-house Medical Biller:: " + this.strPrefernce + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strBillingrange))
+            {
+                HTML = HTML + this.strBillingrange + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strStatePref))
+            {
+                HTML = HTML + "State  :: " + this.strStatePref + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strCityPref))
+            {
+                HTML = HTML + "City :: " + this.strCityPref + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strYearsofExp) && this.strYearsofExp != "0")
+            {
+                HTML = HTML + "Years Of Experience:: " + this.strYearsofExp + "</strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strSerReq))
+            {
+                HTML = HTML + "Specific Services Requirement:: " + this.strSerReq + " </strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strEarly))
+            {
+                HTML = HTML + "How Early Do You Need To Engage The Medical Biller:: " + this.strEarly + "</strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strSoftwareName))
+            {
+                HTML = HTML + "Software Used:: " + this.strSoftwareName + "</strong><br>";
+            }
+            if (!string.IsNullOrEmpty(this.strPageInfo))
+            {
+                HTML = HTML + "<hr />";
+                HTML = HTML + this.strPageInfo + "</strong><br>";
+            }
+            HTML = HTML + "</body>";
+            HTML = HTML + "</html>";
+
+            msg.Subject = " :: MBC Leads Assigned";
+            msg.Body = HTML;
+            msg.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+
+            client.Host = "pop.meddatacarepro.com";
+
+            client.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+
+
+            client.Send(msg);//uncomment while uploading
+
+            strResult = "success";
+            //autoreply_EmailAlerts_fromReportPage(emailId);
+        }
+        catch (Exception ex)
+        {
+
+            ex.ToString();
+            ErrorLog.WriteErrorLog(ex.ToString());
+            strResult = "failure";
+
+        }
+        finally
+        {
+            msg.Dispose();
+
+        }
+
+        return strResult;
+    }
+    public string sendscheduledmail(string title, string strreportpath, Hashtable emailInfo, string TO, string CC)
+    {
+        //change this .............
+        string HTML;
+        MailMessage msg = new MailMessage();
+        string strResult;
+
+        //sending Mail 
+        try
+        {
+            msg.From = new MailAddress(info_email);
+            if (HttpContext.Current.Request.Url.Host.ToString() != "localhost")
+            {
+                //Server
+                if(TO!="")
+                    msg.To.Add(TO);
+
+                string[] strCC = CC.Split(',');
+                if (CC != "" && strCC.Length > 0)
+                {
+                    for (int count = 0; count < strCC.Length; count++)
+                        msg.CC.Add(strCC[count].Trim());
+                }
+
+                //if (title == "Unassigned Leads")
+                //    msg.To.Add(steve_email);
+                //else if (title == "Daily Sales Lead Report")
+                //{
+                //    msg.To.Add(steve_email);
+                //    msg.CC.Add("brian.reese@medicalbillersandcoders.com");
+                //}
+                //else
+                //{
+                //    msg.To.Add(prerna_email);
+                //    msg.CC.Add(steve_email);
+                //}
+                msg.Bcc.Add("developer@meddatacarepro.com");
+            }
+            else
+            {
+                //Local
+                msg.To.Add("developer@meddatacarepro.com");
+            }
+            if (File.Exists(strreportpath))
+            {
+                System.Net.Mail.Attachment inline = new System.Net.Mail.Attachment(strreportpath);
+                inline.ContentDisposition.Inline = true;
+                msg.Attachments.Add(inline);
+            }
+
+            msg.Priority = MailPriority.High;
+            HTML = "<!DOCTYPE HTML PUBLIC\"-//IETF//DTD HTML//EN\">";
+            HTML = "<html>";
+            HTML = HTML + "<head>";
+            HTML = HTML + "<title>Email::" + strWebsite + "</title>";
+            HTML = HTML + "</head>";
+            HTML = "<body bgcolor=\"FFFFFF\">";
+            HTML = HTML + "<p><font size =\"2\" face=\"Arial\"><strong>";
+
+            HTML = HTML + "PFA " + title;
+            HTML = HTML + "</strong><br/> <br/>";
+            HTML = HTML + "<table border='1' cellpadding='10'>";
+            foreach (DictionaryEntry item in emailInfo)
+                HTML = HTML + "<tr><td>" + item.Key.ToString().Replace('_', ' ') + "</td> <td>:</td> <td  align='right'> " + item.Value + "</td></tr>";
+            HTML = HTML + "</table>";
+            HTML = HTML + "</html>";
+
+            msg.Subject = title;
+            msg.Body = HTML;
+            msg.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+            client.Host = "pop.meddatacarepro.com";
+            client.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+            client.Send(msg);//uncomment while uploading
+            strResult = "success";
+        }
+        catch (Exception ex)
+        {
+            ErrorLog.WriteErrorLog(ex.ToString());
+            //this.StoreExceptions(ex);
+            ex.ToString();
+            strResult = "failure";
+
+        }
+        finally
+        {
+            msg.Dispose();
+
+        }
+
+        return strResult;
+    }
+
+    public string SendMail(string From, string To, string CC, string Bcc, string MailSubject, string MailBody)
+    {
+        //string HTML;
+        MailMessage msg = new MailMessage();
+        string strResult;
+
+
+        //sending Mail 
+        try
+        {
+
+            msg.From = new MailAddress(From, "");
+            if (To != "")
+                msg.To.Add(To);
+            string[] strCC = CC.Split(',');
+            if (CC != "" && strCC.Length > 0)
+            {
+                for (int count = 0; count < strCC.Length; count++)
+                    msg.CC.Add(strCC[count].Trim());
+            }
+
+            string[] strBcc = Bcc.Split(',');
+            if (Bcc != "" && strBcc.Length > 0)
+            {
+                for (int count = 0; count < strBcc.Length; count++)
+                    msg.Bcc.Add(strBcc[count].Trim());
+            }
+            msg.Priority = MailPriority.Normal;
+            msg.Subject = MailSubject;
+            msg.Body = MailBody;
+            msg.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+            client.Host = "pop.meddatacarepro.com";
+            client.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+            client.Send(msg);//uncomment while uploading
+            strResult = "success";
+            //autoreply_EmailAlerts_fromReportPage(emailId);
+        }
+        catch (Exception ex)
+        {
+
+            ex.ToString();
+            ErrorLog.WriteErrorLog(ex.ToString());
+            strResult = "failure";
+
+        }
+        finally
+        {
+            msg.Dispose();
+
+        }
+
+        return strResult;
+    }
+
+    public void SendEmailWithImages(string From, string To, string CC, string Bcc, string MailSubject, string MailBody, string contentStream)
+    {
+        //Holds message information.
+        System.Net.Mail.MailMessage mailMessage = new System.Net.Mail.MailMessage();
+        //Add basic information.
+        mailMessage.From = new System.Net.Mail.MailAddress(From);
+        mailMessage.To.Add(To);
+
+        mailMessage.Subject = MailSubject;
+        //Create two views, one text, one HTML.
+        //System.Net.Mail.AlternateView plainTextView = System.Net.Mail.AlternateView.CreateAlternateViewFromString(MailBody, null, "text/plain");
+        System.Net.Mail.AlternateView htmlView = System.Net.Mail.AlternateView.CreateAlternateViewFromString(MailBody + "<image src=cid:HDIImage>", null, "text/html");
+        //Add image to HTML version
+        System.Net.Mail.LinkedResource imageResource = new System.Net.Mail.LinkedResource("D:/MedicalRedesign/" + contentStream);
+        imageResource.ContentId = "HDIImage";
+        htmlView.LinkedResources.Add(imageResource);
+        //Add two views to message.
+        //mailMessage.AlternateViews.Add(plainTextView);
+        mailMessage.AlternateViews.Add(htmlView);
+        //Send message
+        System.Net.Mail.SmtpClient smtpClient = new System.Net.Mail.SmtpClient();
+        smtpClient.Host = "pop.meddatacarepro.com";
+        smtpClient.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+        smtpClient.Send(mailMessage);
+    }
+
+    public string SendMail_ReferralLink(string From, string To, string CC, string Bcc, string MailSubject, string MailBody)
+    {
+        string HTML;
+        MailMessage msg = new MailMessage();
+        string strResult;
+
+
+        //sending Mail 
+        try
+        {
+
+            msg.From = new MailAddress(From, "");
+            if (To != "")
+                msg.To.Add(To);
+            string[] strTo = CC.Split(',');
+            if (CC != "" && strTo.Length > 0)
+            {
+                for (int count = 0; count < strTo.Length; count++)
+                    msg.CC.Add(strTo[count].Trim());
+            }
+
+            string[] strBcc = Bcc.Split(',');
+            if (Bcc != "" && strBcc.Length > 0)
+            {
+                for (int count = 0; count < strBcc.Length; count++)
+                    msg.Bcc.Add(strBcc[count].Trim());
+            }
+            msg.Priority = MailPriority.Normal;
+            msg.Subject = MailSubject;
+            msg.Body = MailBody;
+            msg.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+            client.Host = "pop.meddatacarepro.com";
+            client.Credentials = new System.Net.NetworkCredential("developer@meddatacarepro.com", "ETPWekc@&$795"); //--- change this after testing 
+            client.Send(msg);//uncomment while uploading
+            strResult = "success";
+            //autoreply_EmailAlerts_fromReportPage(emailId);
+        }
+        catch (Exception ex)
+        {
+            
+            ex.ToString();
+            ErrorLog.WriteErrorLog(ex.ToString());
+            strResult = "failure";
+
+        }
+        finally
+        {
+            msg.Dispose();
+
+        }
+
+        return strResult;
+    }
+}

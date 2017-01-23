@@ -1,0 +1,24 @@
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+}
+
+/* =======================================================================================
+Example showing how to change the color/size of the icons:
+.icon-name {
+	font-size: 32px; // works because "width" & "height" were set using em units
+	color: red; // works for single-colored icons, because "fill" was set to "currentColor"
+}
+======================================================================================== */
+.fill-color1 {
+	fill: #000;
+}
+.fill-color2 {
+	fill: #ff4000;
+}
+
+.icon-blog {
+	width: 0.986328125em;
+}

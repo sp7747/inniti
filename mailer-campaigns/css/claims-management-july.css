@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{font-family:Arial, Helvetica, sans-serif; font-size:17px; color:#3f3f41; line-height:25px; }
+#wrapper { width:100%; margin:0px auto; padding:0 auto; }
+.header{width:100%; height:50px; background:#00b0c6; padding:20px 0;}
+.logo{ width:282px; height:106px; background:#fff; box-shadow: 2px 2px 2px #CCC; margin:-90px 0px 0px 5%; text-align:center; z-index:10; }
+.mailer_title{width:40%; text-align:center; margin:0 auto; line-height:30px; color:#fff; font-size:25px; font-weight:bold;}
+.image_header{width:90%; height:421px; background:rgba(0, 0, 0, 0) url("../images/claims-management.png") no-repeat scroll left top; margin:0 auto;}
+ .submit{
+	 background: #9adbdd none repeat scroll 0 0;
+    color: #000;
+    display: block;
+    font-size: 16px;
+    height: 27px;
+    margin: 0 52px 22px;
+    padding: 0;
+    text-align: center;
+    width: 191px;
+} 
+
+.content{ margin:0 auto; width:80%; background:#d7dce0; color:#3f3f41; font-size:18px; padding:2% 5%;}
+.header_content{ float:left; width:66%; padding:30px; margin-top:280px; color:#000;}
+.footer{width:100%; text-align:center; font-size:12px; padding:10px 0;}
+
+/* form */
+.form{float:right; width:25%; background:#00b0c6; min-height:373px; margin-bottom:10px; color:#fff; border:1px solid #ffc4af;  }
+/*.form{ float:left; width:290px; background:#fff; box-shadow:2px 2px 2px #b8b8b8; opacity: 0.9; filter: alpha(opacity=90);}*/
+.form_submit_btn a{display:block; height:27px; width:234px; color:#000; background:#9adbdd; margin:10px 23px; font-size:16px; text-align:center; padding:9px 0 0 0;}
+.form a{outline:none; text-decoration:none; border:0px; color:#fff;}
+
+.form_middle {width:95%; margin:0px; padding:0 2%; }
+.form_title { padding:5px; margin:5px; font-size:16px; text-align:center; font-weight:bold; color:#fff; line-height:28px;}
+.form_middle ul {width:95%; list-style-type:none; margin:0; padding:0;}
+.form_middle ul li {list-style-type:none;}
+.form_middle ul li input {width:90%; height:22px; background:#fff; padding:4px 0 3px 5px; border:none; box-shadow:-1px 1px 1px 1px #999 inset; margin:5px 10px 0 17px; color:#000;}
+.form_middle ul li select {width:91%; height:26px; background:#fff; padding:4px 0 3px 5px; border:none; box-shadow:-1px 1px 1px 1px #999 inset; margin:5px 10px 0 17px; color:#000; border:none;}
+.form_middle ul li textarea {width:90%; height:30px; background:#fff; padding:4px 0 3px 5px; border:none; box-shadow:-1px 1px 1px 1px #999 inset; margin:5px 10px 0 17px; color:#000; border:none; font-family:Arial, Helvetica, sans-serif; font-size:12px;resize: none; background:#fff; padding:4px 0 3px 5px; border:none; box-shadow:-1px 1px 1px 1px #999 inset; margin:5px 10px 0 17px; color:#000; border:none; font-family:Arial, Helvetica, sans-serif; font-size:12px;list-style:none;}
+.captcha {background-image: url("../images/CaptchaBg.jpg");color: #0A6496;float: left;font-size: 25px;font-style: italic;font-weight: bold;margin: 5px 6px;text-align: center;vertical-align: middle;width: 160px; height:40px;letter-spacing:5px; font-family: Bell MT;}
+.form_middle ul li .captcha {width:50%; float:left;margin: 5px 10px 0 17px; background:#9adbdd;}
+.form_middle ul li .captcha input {float:left; border:0px; box-shadow:none; background:none;margin: 0;height: inherit;}
+.form_middle ul li .captcha_text {width:35%; float:left;}
+.form_middle ul li .captcha_text input {width: 65px !important;}
+.form_middle ul li .submit {margin:3px auto; text-align:center }
+.form_middle ul li .submit input {padding:0px;background:none;text-align:center;height:35px;width: 234px; box-shadow: none; margin-bottom:15px;}
+.form_middle ul li .submit input:focus {border-color: rgba(#d83700) outline: 0; outline: thin dotted \9;  /* IE6-9 */}
+.form_middle ul li span {margin:7px 10px 0 17px; font-size:12px; }
+.form_middle ul li label{margin:7px 0 0 17px;}
+
+@media screen and (min-width: 200px) and (max-width: 980px){
+	#wrapper { width:100%;} 
+	.mailer_title{width:100%; line-height:30px; color:#fff; font-size:18px;}
+	.logo{ width:100%; height:106px; background:#fff; margin:0; text-align:center; z-index:0; }
+	.content{width:100%; padding:5px; margin:0;}
+	.form{width:100%}
+	.image_header{width:100%; background:none;}
+	.content{ width:98%; padding:10px;}
+	
+}

@@ -1,0 +1,15 @@
+User-agent: *
+Disallow: /auto-insurance.aspx
+Disallow: /auto-insurance.aspx?*
+Disallow: /auto-fraudulent-claims.aspx
+Disallow: /auto-fraudulent-claims.aspx?*
+Disallow: /claims-analytics-in-auto-industry.aspx
+Disallow: /claims-analytics-in-auto-industry.aspx?*
+Disallow: /auto-claims-management-services.aspx
+Disallow: /auto-claims-management-services.aspx?*
+Disallow: /Role-of-inniti-in-property-and-casualty.aspx
+Disallow: /Role-of-inniti-in-property-and-casualty.aspx?*
+Disallow: /property-and-casualty.aspx
+Disallow: /property-and-casualty.aspx?*
+Disallow: /Press-Release/
+Disallow: /Backend/

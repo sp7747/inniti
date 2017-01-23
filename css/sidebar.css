@@ -1,0 +1,49 @@
+﻿* {
+margin: 0;
+padding: 0;
+}
+.sidebar-root {
+position : relative;
+overflow : hidden;
+}
+.sidebar-root div.sidebar-container {
+position: absolute;
+}
+div.sidebar-container {
+width : 300px;
+height : 80px;
+position: fixed;
+background-color: #f1592a;
+filter: alpha(opacity=87);
+-moz-opacity: 0.87;
+opacity: 0.87;
+z-index:99999;
+}
+div.sidebar-container.right {
+top: 50%;
+right: 0px;
+}
+div.sidebar-inject {
+position: absolute;
+}
+div.sidebar-inject.right {
+background: url("phone-icon.png") center no-repeat;
+top: 0px;
+left: 0px;
+width : 66px;
+}
+div.sidebar-body {
+padding: 8px 10px 10px 16px;
+position: absolute;
+top: 0px;
+left: 0px;
+color: #FFFFFF;
+}
+ul.sidebar-menu {
+list-style: none;
+text-decoration: none;
+color:white;
+}
+ul.sidebar-menu li {
+line-height: 1.5em;
+}

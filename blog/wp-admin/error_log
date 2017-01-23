@@ -1,0 +1,13 @@
+[13-Apr-2016 07:12:44 UTC] PHP Warning:  mysql_connect(): Access denied for user 'webadm'@'localhost' (using password: YES) in /home/vipratechco/public_html/inniti/wp-includes/wp-db.php on line 1515
+[13-Apr-2016 07:13:02 UTC] PHP Warning:  mysql_connect(): Access denied for user 'webadm'@'localhost' (using password: YES) in /home/vipratechco/public_html/inniti/wp-includes/wp-db.php on line 1515
+[13-Apr-2016 07:13:28 UTC] PHP Warning:  mysql_connect(): Access denied for user 'webadm'@'localhost' (using password: YES) in /home/vipratechco/public_html/inniti/wp-includes/wp-db.php on line 1515
+[13-Apr-2016 07:14:51 UTC] PHP Warning:  mysql_connect(): Access denied for user 'webadm'@'localhost' (using password: YES) in /home/vipratechco/public_html/inniti/wp-includes/wp-db.php on line 1515
+[23-Apr-2016 17:09:12 UTC] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/vipratechco/public_html/inniti/wp-content/plugins/like-box/includes/widget.php on line 48
+[23-Apr-2016 17:09:52 UTC] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/vipratechco/public_html/inniti/wp-content/plugins/like-box/includes/widget.php on line 48
+[23-Apr-2016 17:14:06 UTC] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/vipratechco/public_html/inniti/wp-content/plugins/like-box/includes/widget.php on line 48
+[23-Apr-2016 17:16:06 UTC] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/vipratechco/public_html/inniti/wp-content/plugins/like-box/includes/widget.php on line 48
+[23-Apr-2016 17:19:23 UTC] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/vipratechco/public_html/inniti/wp-content/plugins/like-box/includes/widget.php on line 48
+[23-Apr-2016 18:07:30 UTC] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/vipratechco/public_html/inniti/wp-content/plugins/like-box/includes/widget.php on line 48
+[23-Apr-2016 18:08:53 UTC] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/vipratechco/public_html/inniti/wp-content/plugins/like-box/includes/widget.php on line 48
+[23-Apr-2016 18:09:20 UTC] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/vipratechco/public_html/inniti/wp-content/plugins/like-box/includes/widget.php on line 48
+[23-Apr-2016 18:36:08 UTC] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/vipratechco/public_html/inniti/wp-content/plugins/like-box/includes/widget.php on line 48
